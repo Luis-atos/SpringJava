@@ -2,10 +2,12 @@ package com.pruebas.spring.config;
 
 import javax.servlet.Filter;
 
-import org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter;
+import org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@ImportResource("classpath:struts.xml")
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	

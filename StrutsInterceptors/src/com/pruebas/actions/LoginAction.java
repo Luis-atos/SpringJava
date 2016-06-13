@@ -4,12 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
+@ParentPackage("BoletajePalomino03")
 public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private Map<String, Object> session = new HashMap<String, Object>();
@@ -35,6 +37,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		System.out.println("acceso restringido");
 		
 		return  INPUT;
+	}
+	
+	@Action(value = "a_testjson", results = {@Result(name = SUCCESS, type = "json")})
+	public String testJSON(){
+		
+		return SUCCESS;
 	}
 
 	@Override
