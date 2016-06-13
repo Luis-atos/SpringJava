@@ -3,6 +3,8 @@ package com.pruebas.actions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
@@ -15,11 +17,13 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private Map<String, Object> session = new HashMap<String, Object>();
+	private static final Log log = LogFactory.getLog(LoginAction.class);
 	
 	@Action(value = "a_simulalogin", results = {@Result(name = SUCCESS, location = "views/logueado.jsp")})
 	public String simulaLogin(){
 		
 		session.put("objUsuario", "usuario1");
+		log.info("Probando login ...");
 		
 		return SUCCESS;
 	}
@@ -41,6 +45,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	
 	@Action(value = "a_testjson", results = {@Result(name = SUCCESS, type = "json")})
 	public String testJSON(){
+		
+		log.info("Probando ...");
 		
 		return SUCCESS;
 	}
