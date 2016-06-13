@@ -2,16 +2,13 @@ package com.pruebas.spring.config;
 
 import javax.servlet.Filter;
 
-import org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 @ImportResource("classpath:struts.xml")
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
 	
-
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[]{SpringConfig.class, SpringSecurityConfig.class, AspectConfig.class};
@@ -30,7 +27,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	
 	@Override
 	protected Filter[] getServletFilters() {
-		return new Filter[]{new StrutsPrepareAndExecuteFilter(), new DelegatingFilterProxy("springSecurityFilterChain")};
+		return new Filter[]{new DelegatingFilterProxy("springSecurityFilterChain")};
 	}
 
 }
