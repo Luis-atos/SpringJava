@@ -8,5 +8,8 @@
 </head>
 <body>
 	Entro al login
+	<script type="text/javascript">
+	var socket = new WebSocket("ws://localhost:8021/StrutsInterceptors/websocket/test");
+	</script>
 </body>
 </html>
