@@ -33,7 +33,9 @@
 		<global-results>
             <result name="NOLOGUEADO" type="redirect" >/a_Inicio</result>
         </global-results>
-		
+        
 	</package>
+	
+	<constant name="struts.action.excludePattern" value="/websocket.*?"/>
 	
 </struts>
